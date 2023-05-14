@@ -40,7 +40,6 @@ public class PropertyServiceImpl implements PropertyService {
         propertyDTO =propertyConverter.convertEntityToDTO(pe);
         return propertyDTO;
     }
-
     //GetAllData
     @Override
     public List<PropertyDTO> getAllProperties() {
