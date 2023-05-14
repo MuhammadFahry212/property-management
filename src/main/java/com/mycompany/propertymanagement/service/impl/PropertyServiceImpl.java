@@ -56,7 +56,6 @@ public class PropertyServiceImpl implements PropertyService {
         }
         return propList;
     }
-
     //UPDATE
     @Override
     public PropertyDTO updateProperty(PropertyDTO propertyDTO, Long propertyId) {
