@@ -23,14 +23,14 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<UserDTO> register(@RequestBody UserDTO userDTO){
+    public ResponseEntity<UserDTO> register(@Valid @RequestBody UserDTO userDTO){
         userDTO = userService.register(userDTO);
         ResponseEntity<UserDTO> Responsentity=new ResponseEntity<>(userDTO, HttpStatus.CREATED);
         return new ResponseEntity<>(userDTO, HttpStatus.CREATED);
     }
 
 
-    @PostMapping(path = "/login",consumes = {"application/json"}, produces = {"application/json"})
+    @PostMapping(path = "/login")
     public ResponseEntity<UserDTO> login(@Valid @RequestBody UserDTO userDTO){
         userDTO = userService.login(userDTO.getOwnerEmail(), userDTO.getPassword());
         return new ResponseEntity<>(userDTO, HttpStatus.OK);
