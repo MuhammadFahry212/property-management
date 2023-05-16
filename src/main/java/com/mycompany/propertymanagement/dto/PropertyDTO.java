@@ -15,6 +15,8 @@ public class PropertyDTO {
     private String description;
     private Double price;
     private String address;
+    private Long userId;
+
 
 
     /* public String getTitle() {
