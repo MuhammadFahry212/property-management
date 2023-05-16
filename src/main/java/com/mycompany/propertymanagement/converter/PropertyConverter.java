@@ -7,23 +7,24 @@ import org.springframework.stereotype.Component;
 @Component
 public class PropertyConverter {
 
-    public PropertyEntity convertDTOEntity(PropertyDTO propertyDTO){
+    public PropertyEntity convertDTOtoEntity(PropertyDTO propertyDTO){
 
-        PropertyEntity pe=new PropertyEntity();
-        pe.setTitle(propertyDTO.getTitle());
-        pe.setDescription(propertyDTO.getDescription());
-        pe.setAddress(propertyDTO.getAddress());
-        pe.setPrice(propertyDTO.getPrice());
+            PropertyEntity pe=new PropertyEntity();
+            pe.setTitle(propertyDTO.getTitle());
+            pe.setDescription(propertyDTO.getDescription());
+            pe.setAddress(propertyDTO.getAddress());
+            pe.setPrice(propertyDTO.getPrice());
 
-        return pe;
+            return pe;
     }
-    public PropertyDTO convertEntityToDTO(PropertyEntity propertyEntity){
+    public PropertyDTO convertEntitytoDTO(PropertyEntity propertyEntity){
             PropertyDTO propertyDTO=new PropertyDTO();
             propertyDTO.setId(propertyDTO.getId());
             propertyDTO.setTitle(propertyDTO.getTitle());
             propertyDTO.setDescription(propertyDTO.getDescription());
             propertyDTO.setAddress(propertyDTO.getAddress());
             propertyDTO.setPrice(propertyDTO.getPrice());
+            propertyDTO.setUserId(propertyEntity.getUserEntity().getId());
 
             return propertyDTO;
     }
